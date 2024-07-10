@@ -28,7 +28,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "hyprwm";
     repo = "hyprlock";
-    rev = "v${finalAttrs.version}";
+    rev = "0552a1edddead3b956e5ceaa19001c056deccb57";
     hash = "sha256-Dd/DK6FKiwVhr6PygCieEjzn7AFf6xijw6mdhquLnkw=";
   };
 
