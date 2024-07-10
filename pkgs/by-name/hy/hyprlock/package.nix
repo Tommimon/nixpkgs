@@ -29,7 +29,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "hyprwm";
     repo = "hyprlock";
     rev = "0552a1edddead3b956e5ceaa19001c056deccb57";
-    hash = "sha256-Dd/DK6FKiwVhr6PygCieEjzn7AFf6xijw6mdhquLnkw=";
+    hash = "sha256-CaEdn0yrfIGpluvk6Hs6FRr1jLjn6k6vzKb0FzqXTsc=";
   };
 
   strictDeps = true;
