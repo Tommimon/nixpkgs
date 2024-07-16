@@ -5,7 +5,6 @@
   qt6,
   makeDesktopItem,
   copyDesktopItems,
-  pkgs,
 }:
 python3Packages.buildPythonApplication rec {
   pname = "modularcalculator-qt";
@@ -29,7 +28,7 @@ python3Packages.buildPythonApplication rec {
     python3Packages.hatchling
     python3Packages.hatch-vcs
     python3Packages.pyyaml
-    pkgs.modularcalculator
+    python3Packages.modularcalculator
     copyDesktopItems
   ];
 

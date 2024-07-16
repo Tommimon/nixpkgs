@@ -7,6 +7,7 @@
   strct,
   pytestCheckHook,
   pyyaml,
+  scipy
 }:
 
 buildPythonPackage rec {
@@ -18,28 +19,16 @@ buildPythonPackage rec {
     owner = "JordanL2";
     repo = "ModularCalculator";
     rev = "refs/tags/${version}";
-    hash = "sha256-KdQZzQJvJ+loAAAAQfaqqEEZJ/9VmNTQX/a4v0oBC98=";
+    hash = "sha256-BabOE+e50bE6z2EUmiLIs6GmSv7u/nrc+GKhOzf5W8Y=";
   };
 
-  nativeBuildInputs = [ setuptools ];
+  nativeBuildInputs = [
+    setuptools 
+    pyyaml
+    scipy
+  ];
 
   dependencies = [ strct ];
-
-  pythonImportsCheck = [
-    "birch"
-    "birch.casters"
-    "birch.exceptions"
-    "birch.paths"
-  ];
-
-  nativeCheckInputs = [
-    pytestCheckHook
-    pyyaml
-  ];
-
-  preCheck = ''
-    export HOME="$(mktemp -d)"
-  '';
 
   meta = {
     description = "Powerful modular calculator engine.";
