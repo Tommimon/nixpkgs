@@ -7,15 +7,15 @@
   copyDesktopItems,
 }:
 python3Packages.buildPythonApplication rec {
-  pname = "modularcalculator";
-  version = "1.4.1";
+  pname = "modularcalculator-qt";
+  version = "1.5.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "JordanL2";
-    repo = "ModularCalculator";
+    repo = "ModularCalculatorInterface";
     rev = "refs/tags/${version}";
-    hash = "sha256-BabOE+e50bE6z2EUmiLIs6GmSv7u/nrc+GKhOzf5W8Y=";
+    hash = "sha256-kiDMMssWoxAsfEDzsWSIrdSl1/yHutrTPn7+M+R2EEU=";
   };
 
   postPatch = ''
@@ -27,7 +27,7 @@ python3Packages.buildPythonApplication rec {
     qt6.wrapQtAppsHook
     python3Packages.hatchling
     python3Packages.hatch-vcs
-    python3Packages.scipy
+    modularcalculator
     copyDesktopItems
   ];
 
@@ -52,7 +52,7 @@ python3Packages.buildPythonApplication rec {
   ];
 
   meta = {
-    description = "Powerful modular calculator engine.";
+    description = "A powerful, scriptable, modular calculator aimed at scientific, engineering or computing work.";
     homepage = "https://github.com/JordanL2/ModularCalculatorInterface";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ Tommimon ];
