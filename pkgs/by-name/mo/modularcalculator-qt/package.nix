@@ -8,14 +8,14 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "modularcalculator-qt";
-  version = "1.5.1";
+  version = "1.5.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "JordanL2";
     repo = "ModularCalculatorInterface";
     rev = "refs/tags/${version}";
-    hash = "sha256-kiDMMssWoxAsfEDzsWSIrdSl1/yHutrTPn7+M+R2EEU=";
+    hash = "sha256-LqDAChV8Xdphg4RR9RnQTkEAOL0rNdlUmVchJ5kgCXo=";
   };
 
   postPatch = ''

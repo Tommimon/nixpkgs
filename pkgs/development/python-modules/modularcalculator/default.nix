@@ -12,14 +12,14 @@
 
 buildPythonPackage rec {
   pname = "modularcalculator";
-  version = "1.4.1";
+  version = "1.4.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "JordanL2";
     repo = "ModularCalculator";
     rev = "refs/tags/${version}";
-    hash = "sha256-BabOE+e50bE6z2EUmiLIs6GmSv7u/nrc+GKhOzf5W8Y=";
+    hash = "sha256-jgeIqqq8tM9gnxdQ3YOeNxg6NB5jMsaiIcyLosJKR+A=";
   };
 
   nativeBuildInputs = [
