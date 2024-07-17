@@ -28,6 +28,11 @@ buildPythonPackage rec {
     scipy
   ];
 
+  propagatedBuildInputs = [
+    pyyaml
+    scipy
+  ];
+
   dependencies = [ strct ];
 
   meta = {

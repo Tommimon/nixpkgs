@@ -29,6 +29,7 @@ python3Packages.buildPythonApplication rec {
     python3Packages.hatch-vcs
     python3Packages.pyyaml
     python3Packages.modularcalculator
+    python3Packages.scipy
     copyDesktopItems
   ];
 
@@ -42,6 +43,9 @@ python3Packages.buildPythonApplication rec {
     pyusb
     rich
     typer
+    pyyaml
+    scipy
+    modularcalculator
   ];
 
   desktopItems = [
@@ -51,6 +55,10 @@ python3Packages.buildPythonApplication rec {
       desktopName = "Modular Calculator";
     })
   ];
+
+  postInstall = ''
+    cp -r $src/config $out/config
+  '';
 
   meta = {
     description = "A powerful, scriptable, modular calculator aimed at scientific, engineering or computing work.";
