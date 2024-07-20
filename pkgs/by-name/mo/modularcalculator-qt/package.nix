@@ -6,16 +6,27 @@
   makeDesktopItem,
   copyDesktopItems,
 }:
+let
+  modularcalculatorPinned = python3Packages.modularcalculator.overridePythonAttrs (oldAttrs: rec {
+    version = "1.4.3";
+    src = fetchFromGitHub {
+      owner = "JordanL2";
+      repo = "ModularCalculator";
+      rev = "refs/tags/${version}";
+      hash = "sha256-ZgGuw/+/GtsKxGHjinDxNs/bZZG/Du3GA9/oe+YqKyQ=";
+    };
+  });
+in
 python3Packages.buildPythonApplication rec {
   pname = "modularcalculator-qt";
-  version = "1.5.2";
+  version = "1.5.3";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "JordanL2";
     repo = "ModularCalculatorInterface";
     rev = "refs/tags/${version}";
-    hash = "sha256-LqDAChV8Xdphg4RR9RnQTkEAOL0rNdlUmVchJ5kgCXo=";
+    hash = "sha256-SUkJc/4xD9C4VzBHD12e+WV0ta/3/oS1toVwORLEo34=";
   };
 
   postPatch = ''
@@ -45,7 +56,7 @@ python3Packages.buildPythonApplication rec {
     typer
     pyyaml
     scipy
-    modularcalculator
+    modularcalculatorPinned
   ];
 
   desktopItems = [
