@@ -64,11 +64,15 @@ python3Packages.buildPythonApplication rec {
       name = "Modular Calculator";
       exec = "modularcalculator";
       desktopName = "Modular Calculator";
+      icon = "modularcalculator-qt";
     })
   ];
 
   postInstall = ''
     cp -r $src/config $out/config
+    for size in 16 24 48 64 128 256; do
+      install -Dm644 $src/icons/''${size}x''${size}.png $out/share/icons/hicolor/''${size}x''${size}/apps/modularcalculator-qt.png || true
+    don
   '';
 
   meta = {
